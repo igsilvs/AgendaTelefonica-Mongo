@@ -1,14 +1,24 @@
-from Controller.InsereContato import post_contato
+from Controller.BuscaContato import BuscaContato
+from Controller.InsereContato import InsereContato
 from models.contato import Contato
-from Controller.BuscaContato import get_contatos
-from db.Contato_Mongo import valida_contato
 
-contato = Contato("Igor","9123123213")
+busca_contato = BuscaContato()
+insere_contato = InsereContato()
+print(" ------------------- Bem Vindo a Agenda ------------- ")
 
-contato2 = Contato("Luis","32323123213")
+while True:
+    func  = int(input("Qual função deseja realizar ? \n 1 - Criar Usuario \n 2 - Buscar Telefone \n 3 - Todos os Contatos \n 4 - Sair \n ..............: "))
+    if func == 1:
+        nome_contato = str(input("Digite o Nome do Contato: "))
+        telefone_contato = str(input("Digite o telefone do Contato: "))
+        novo_contato = Contato(nome_contato,telefone_contato)
+        insere_contato.cria_contato(novo_contato)
+    elif func == 2:
+        nome_contato = str(input("Digite o Nome do Contato: "))
+        busca_contato.buscar_telefones(nome_contato)
+    elif func == 3:
+        print(busca_contato.buscar_todos_contatos())
+    elif func == 4:
+        break
 
-
-# post_contato(contato)
-
-a = valida_contato(contato)
-print(a)
+print("Até Mais !")
