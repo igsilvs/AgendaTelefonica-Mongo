@@ -6,7 +6,9 @@ def post_contato(contato):
         mydb = client["master"]
         mycol = mydb["contato"]
     except AttributeError:
+        print("-------------------------------")
         print("Houve um erro ao inserir")
+        print("-------------------------------")
     else:
         mycol.insert_one(vars(contato))
 
