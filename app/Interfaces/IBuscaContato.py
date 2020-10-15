@@ -1,4 +1,4 @@
 class IBuscaContato(object):
     
-    def get_contato(self,contato):
+    def buscar_contatos(self,contato):
         return NotImplementedError("Função deve ser implementada")

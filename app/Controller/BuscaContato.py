@@ -1,6 +1,6 @@
 from Interfaces.IBuscaContato import IBuscaContato
-# from db.ContatoMongo import get_contato
+from db.Contato_Mongo import get_contatos
 
 class BuscaContato(IBuscaContato):
-    def get_contato(self, contato):
-        # return 
+    def buscar_contatos(self, contato):
+        return get_contatos()
